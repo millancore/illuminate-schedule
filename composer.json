@@ -1,0 +1,17 @@
+{
+    "require": {
+        "illuminate/console": "^5.8",
+        "illuminate/events": "^5.8",
+        "illuminate/cache": "^5.8",
+        "illuminate/filesystem": "^5.8",
+        "dragonmantank/cron-expression": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Schedule\\": "src/"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+use Schedule\Kernel;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Filesystem\Filesystem;
+use Schedule\Application;
+
+require __DIR__.'/vendor/autoload.php';
+
+$app = new Application;
+
+$app['config'] = [
+    'cache.default' => 'file',
+    'cache.stores.file' => [
+        'driver' => 'file',
+        'path' => __DIR__ . '/cache'
+    ]
+];
+
+$app['files'] = new Filesystem;
+
+$kernel = new Kernel($app, new Dispatcher($app));
+
+$kernel->handle(
+    new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
