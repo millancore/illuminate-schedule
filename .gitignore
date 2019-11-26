@@ -1,4 +1,5 @@
 cache/*
 vendor
 .vscode
+.php_cs.cache
 !cache/.gitkeep

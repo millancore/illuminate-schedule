@@ -1,4 +1,14 @@
 {
+    "name": "millancore/illuminate-schedule",
+    "type": "project",
+    "description": "Use laravel Schedule in non-Laravel applications",
+    "keywords": [
+        "schedule",
+        "cron",
+        "manager",
+        "laravel"
+    ],
+    "license": "MIT",
     "require": {
         "illuminate/console": "^5.8",
         "illuminate/events": "^5.8",
@@ -13,5 +23,14 @@
         "files": [
             "helpers.php"
         ]
+    },
+    "scripts": {
+        "lint": "php-cs-fixer fix --diff --dry-run",
+        "fix": "php-cs-fixer fix",
+        "scan": "psalm --show-info=false"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "vimeo/psalm": "^3.6"
     }
 }
